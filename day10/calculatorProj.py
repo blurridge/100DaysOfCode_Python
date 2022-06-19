@@ -26,7 +26,7 @@ def calculator_function():
         print("+\n-\n*\n/")
         operation_picked = input("Pick an operation: ")
         if operation_picked not in operations:
-            print("You have entered an invalid operation. Calculator will be reset")
+            print("You have entered an invalid operation. Calculator will be reset.")
             calculator_function()
         second_number = float(input("What's the next number?: "))
         result = operations[operation_picked](first_number, second_number)
