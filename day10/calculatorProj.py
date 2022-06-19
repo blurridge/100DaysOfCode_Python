@@ -25,13 +25,12 @@ def calculator_function():
     while continue_choice == "y":
         print("+\n-\n*\n/")
         operation_picked = input("Pick an operation: ")
+        if operation_picked not in operations:
+            print("You have entered an invalid operation. Calculator will be reset")
+            calculator_function()
         second_number = float(input("What's the next number?: "))
         result = operations[operation_picked](first_number, second_number)
-        if result != "None":
-            print(f"{first_number} {operation_picked} {second_number} = {result}")
-        else:
-            print("You have entered an invalid operation.")
-            calculator_function()
+        print(f"{first_number} {operation_picked} {second_number} = {result}")
         continue_choice = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start a new calculation: ").lower()
         if continue_choice == "y":
             first_number = result
