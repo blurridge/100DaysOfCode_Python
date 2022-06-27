@@ -7,6 +7,17 @@ import random
 # 4. Ace can be 11 or 1.
 # 5. Cards in the list have equal probability and are not removed.
 
+# Possible results in resultCheck()
+# 1. Loss if:
+#   a. User scores greater than 21.
+#   b. Dealer scores 21.
+#   c. Dealer score is greater if user stands.
+# 2. Win if:
+#   a. User scores 21.
+#   b. Dealer scores greater than 21 and user scores less than 21.
+#   c. User scores is greater than dealer if user stands.
+# 3. Tie only if both score the same even after user stands and dealer takes cards.
+
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 # Utility functions
@@ -22,7 +33,7 @@ def resultCheck(user_score, dealer_score, num_turns):
         return "You lose!"
     elif user_score == 21 or (dealer_score > 21 and user_score < 21) or (user_score < 21 and user_score > dealer_score and num_turns > 2):
         return "You win!"
-    elif (user_score == 21 and dealer_score == 21) or (user_score == dealer_score and num_turns > 2):
+    elif user_score == dealer_score and num_turns > 2:
         return "It's a tie!"
 
 def getDealerCards(dealer_cards, num_turns):
