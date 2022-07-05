@@ -42,7 +42,6 @@ def getDealerCards(dealer_cards, num_turns):
             dealer_cards.append(random.choice(cards))
     else:
         dealer_cards.append(random.choice(cards))
-    return dealer_cards
 
 def getUserCards(user_cards, num_turns):
     if(num_turns == 1):
@@ -50,7 +49,6 @@ def getUserCards(user_cards, num_turns):
             user_cards.append(random.choice(cards))
     else:
         user_cards.append(random.choice(cards))
-    return user_cards
 
 # Main function
 
