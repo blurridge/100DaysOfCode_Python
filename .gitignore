@@ -1,2 +1,3 @@
 *.code-workspace
 pythonCourseUdemy.code-workspace
+__pycache__/
