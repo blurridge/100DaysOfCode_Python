@@ -16,6 +16,7 @@ score = Scoreboard()
 screen.listen()
 screen.onkey(key="Up", fun=player.move_up)
 screen.onkey(key="Down", fun=player.move_down)
+screen.title("Turtle Crossing Game by blurridge")
 
 continue_game = True
 cars = Car()
