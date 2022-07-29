@@ -22,9 +22,7 @@ while continue_game:
     answer = screen.textinput(title=f"Guess the state {correct}/50", prompt="Type in the name of a state:").title()
 
     if answer == "Exit":
-        for state in data["state"].values:
-            if state not in correct_guesses:
-                to_study.append(state)
+        to_study = [state for state in data["state"].values if state not in correct_guesses]
         df = pd.DataFrame(to_study, columns=["To Study"])
         df.to_csv("./to_study.csv")
         continue_game = False 
